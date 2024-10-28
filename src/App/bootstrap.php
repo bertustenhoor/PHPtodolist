@@ -8,4 +8,8 @@ use Framework\App;
 
 $app = new App();
 
+$app->add('/');
+
+prettyPrint($app);
+
 return $app;
