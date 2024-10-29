@@ -3,7 +3,6 @@
 declare(strict_types = 1);
 
 include '../src/utility.php';
-//prettyPrint($_SERVER);
 
 echo '<h4>This is the Todo List application</h4>';
 
