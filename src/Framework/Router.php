@@ -10,10 +10,18 @@ class Router
 
     public function add(string $method, string $path)
     {
+        $path = $this->normalisePath($path);
         $this->routes[] = [
             'path' => $path,
             'method' => strtoupper($method),
         ];
     }
+    private function normalisePath(string $path): string
+    {
+        $path = trim($path, '/');
+        $path = "/{$path}/";
+        $path = preg_replace("#/{2,}#", '/', $path);
 
+        return $path;
+    }
 }
